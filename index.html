@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Chat</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>VIDEO CHAT</h1>
+      <button id="mode-btn" class="icon-btn" title="Toggle dark/light mode">🌙</button>
+    </header>
+    <div class="videos">
+      <div class="video-card">
+        <video id="my-video" autoplay muted></video>
+        <span class="label">You</span>
+      </div>
+      <div class="video-card">
+        <video id="friend-video" autoplay></video>
+        <span class="label">Friend</span>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="id-row">
+        <input type="text" id="my-id" readonly>
+        <button id="copy-btn" class="icon-btn" title="Copy your ID">📋</button>
+      </div>
+      <div class="id-row">
+        <input type="text" id="friend-id" placeholder="Friend's ID">
+        <button id="call-btn" class="main-btn">Call</button>
+        <button id="end-btn" class="main-btn danger">End</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button id="mute-btn" class="icon-btn" title="Mute/unmute">🎤</button>
+      <button id="video-btn" class="icon-btn" title="Hide/show video">📹</button>
+      <button id="screen-btn" class="icon-btn" title="Share screen">🖥️</button>
+      <span id="timer">00:00</span>
+    </div>
+    <div class="chat-area">
+      <div id="chat-box"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+        <button type="submit" class="icon-btn">➡️</button>
+      </form>
+    </div>
+    <div id="status"></div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
